@@ -185,7 +185,7 @@ if [[ $INSTALL_SIM == "true" ]]; then
 		echo "Gazebo (Harmonic) will be installed"
 		echo "Earlier versions will be removed"
 		# Add Gazebo binary repository
-		sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+		sudo cp /root/PX4-Autopilot/Tools/setup/gazebo.gpg /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
 		echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
 		sudo apt-get update -y --quiet
 
